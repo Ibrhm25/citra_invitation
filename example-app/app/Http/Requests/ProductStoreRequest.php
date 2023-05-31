@@ -26,12 +26,14 @@ class ProductStoreRequest extends FormRequest
             return [
                 'name' => 'required|string|max:258',
                 'image' => 'required|image|mimes:jpeg,png,jpg,gif,svg|max:2048',
+                'link' => 'required|string',
                 'description' => 'required|string',
             ];
         } else {
             return [
                 'name' => 'required|string|max:258',
                 'image' => 'nullable|image|mimes:jpeg,png,jpg,gif,svg|max:2048',
+                'link' => 'required|string',
                 'description' => 'required|string',
             ];
         }
@@ -42,11 +44,13 @@ class ProductStoreRequest extends FormRequest
             return [
                 'name.required' => 'Name is required!',
                 'image.required' => 'Image is required!',
+                'link' => 'required|string',
                 'description.required' => 'Description is required!',
             ];
         } else {
             return [
                 'name.required' => 'Name is required!',
+                'link' => 'required|string',
                 'description.required' => 'Description is required!',
             ];
         }
